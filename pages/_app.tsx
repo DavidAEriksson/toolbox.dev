@@ -1,3 +1,6 @@
+import '@fontsource/familjen-grotesk'
+import '@fontsource/gothic-a1'
+
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../theme/index";
