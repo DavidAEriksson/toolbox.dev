@@ -10,7 +10,24 @@ const overrides = {
   fonts: {
     heading: `'Familjen Grotesk', sans-serif`,
     body: `'Gothic A1', sans-serif`
-
+  },
+  colors: {
+    blue: {
+      50: '#7DEFFF',
+      100: '#81BBF0',
+      150: '#7698B3'
+    },
+    gray: {
+      50: '#A2A2A9',
+      100: '#4B4B59',
+      150: '#333640',
+      200: '#2D3236',
+      250: '#303441',
+      300: '#2A2C34',
+      350: '#21232A',
+      400: '#272A33',
+      500: '#24262E'
+    },
   }
 };
 

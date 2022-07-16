@@ -5,7 +5,7 @@ const styles = {
     body: {
       bg: "#272A33", // Global background color
       color: "#F1F0FA", // Default text color
-    },
+    }
   }
 }
 
