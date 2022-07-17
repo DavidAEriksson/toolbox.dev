@@ -1,27 +1,22 @@
-import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
-import React from "react";
+import { Box, Flex, Grid, GridItem, Heading } from "@chakra-ui/react";
+import { CloseIcon, ArrowRightIcon } from '@chakra-ui/icons'
+import React, { useState } from "react";
 
 export default function Layout({ children }: any): JSX.Element {
+  
+  const [navWidth, setNavWidth] = useState<string>('15vw')
+
   return (
-    <Grid
-      minH="100vh"
-      w="full"
-      templateAreas={`"header header"
-                      "nav main"
-                      "nav footer"`}
-      gridTemplateRows={'70px 1fr 70px'}
-      gridTemplateColumns={'250px 1fr'}
-    >
-        <GridItem pl='10' pt="3" bg='gray.500' shadow="base" area={'header'}>
-          <Heading>Toolbox.dev 🛠️</Heading>
-        </GridItem>
-        <GridItem pl='2' bg='gray.300' shadow="base" area={'nav'}>
-        </GridItem>
-        <GridItem pl='2' area={'main'} >
-          { children }
-        </GridItem>
-        <GridItem pl='2' bg='blue.150' area={'footer'}>
-        </GridItem> 
-    </Grid>
+    <Flex flexDirection="row">
+      <Flex flexDirection="column" transition="width 0.2s ease-in" w={navWidth} h="100vh" backgroundColor="gray.250">
+        {navWidth === '15vw' ? 
+          <CloseIcon w={5} h={5} transition="0.3s" alignSelf="flex-end" mt="4" mr="4" _hover={{color: "red.50"}} onClick={() => setNavWidth('5vw')}/>
+          : <ArrowRightIcon w={5} h={5} transition="0.3s" alignSelf="flex-end" mt="4" mr="4" _hover={{color: "green.100"}} onClick={() => setNavWidth('15vw')}/>
+        }
+      </Flex>
+      <Flex>
+        {children}
+      </Flex>
+    </Flex>   
   );
 }

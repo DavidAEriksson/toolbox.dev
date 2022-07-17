@@ -1,12 +1,13 @@
+import { Heading } from "@chakra-ui/react";
 import { ReactElement } from "react";
 import Layout from "../components/layout/Layout";
 import { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {
   return (
-    <div>
-      <h1></h1>
-    </div>
+    <>
+      <Heading ml={10} mt={5}>Toolbox.dev</Heading>
+    </>
   );
 };
 

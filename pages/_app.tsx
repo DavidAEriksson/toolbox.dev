@@ -2,7 +2,7 @@ import '@fontsource/familjen-grotesk'
 import '@fontsource/gothic-a1'
 
 import type { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Container } from "@chakra-ui/react";
 import theme from "../theme/index";
 import { NextPage } from "next";
 import { ReactElement, ReactNode } from "react";
@@ -20,7 +20,9 @@ const Toolbox = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   return (
     <ChakraProvider theme={theme}>
-      {getLayout(<Component {...pageProps} />)}
+      <Container minHeight="100vh" m="0" p="0" centerContent={false}>
+        {getLayout(<Component {...pageProps} />)}
+      </Container>
     </ChakraProvider>
   );
 };
