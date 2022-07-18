@@ -11,10 +11,20 @@ type NavItemProps = {
 
 export default function NavItem({ route, name, icon }: NavItemProps): JSX.Element {
   return (
-    <Flex ml="2" mt="8" pl="2" alignItems="center" _hover={{color: "green.100"}} transition="0.2s" cursor="pointer">
+    <Flex 
+      pl="2" 
+      pt="4"
+      pb="4"
+      alignItems="center"
+      backgroundColor="gray.550"
+      borderBottom="solid 2px"
+      borderColor="white.50"
+      _hover={{ color: "green.100", backgroundColor: 'gray.600', borderColor: 'green.100' }}
+      transition="0.2s"
+      cursor="pointer" >
       <Icon mr="4" w={6} h={6} as={icon} />
       <Link href={route}>
-        <Text fontWeight="bold" fontSize="2xl">{name}</Text >
+        <Text fontWeight="bold" fontSize="xl">{name}</Text >
       </Link>
     </Flex>
   );
