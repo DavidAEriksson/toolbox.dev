@@ -1,22 +1,22 @@
 import '@fontsource/familjen-grotesk'
 import '@fontsource/gothic-a1'
 
-import type { AppProps } from "next/app";
-import { ChakraProvider, Container } from "@chakra-ui/react";
-import theme from "../theme/index";
-import { NextPage } from "next";
-import { ReactElement, ReactNode } from "react";
+import type { AppProps } from 'next/app'
+import { ChakraProvider, Container } from '@chakra-ui/react'
+import theme from '../theme/index'
+import { NextPage } from 'next'
+import { ReactElement, ReactNode } from 'react'
 
 export type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
+  getLayout?: (page: ReactElement) => ReactNode
+}
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
+  Component: NextPageWithLayout
+}
 
 const Toolbox = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout = Component.getLayout ?? ((page) => page);
+  const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
     <ChakraProvider theme={theme}>
@@ -24,7 +24,7 @@ const Toolbox = ({ Component, pageProps }: AppPropsWithLayout) => {
         {getLayout(<Component {...pageProps} />)}
       </Container>
     </ChakraProvider>
-  );
-};
+  )
+}
 
-export default Toolbox;
+export default Toolbox
